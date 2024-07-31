@@ -1,7 +1,6 @@
 package com.study.mybatis.member.vo;
 
 public class Member {
-	
 	private String userId;
 	private String userPwd;
 	private String userName;
@@ -10,14 +9,14 @@ public class Member {
 	private String gender;
 	private String phone;
 	private String address;
-	private String enrolldate;
-	private String modifydate;
+	private String enrollDate;
+	private String modifyDate;
 	private String status;
 	
 	public Member() {	}
 
 	public Member(String userId, String userPwd, String userName, String email, String birthday, String gender,
-			String phone, String address, String enrolldate, String modifydate, String status) {
+			String phone, String address, String enrollDate, String modifyDate, String status) {
 		this.userId = userId;
 		this.userPwd = userPwd;
 		this.userName = userName;
@@ -26,9 +25,21 @@ public class Member {
 		this.gender = gender;
 		this.phone = phone;
 		this.address = address;
-		this.enrolldate = enrolldate;
-		this.modifydate = modifydate;
+		this.enrollDate = enrollDate;
+		this.modifyDate = modifyDate;
 		this.status = status;
+	}
+	
+	public Member(String userId, String userPwd, String userName, String email, String birthday, String gender,
+			String phone, String address) {
+		this.userId = userId;
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.email = email;
+		this.birthday = birthday;
+		this.gender = gender;
+		this.phone = phone;
+		this.address = address;
 	}
 
 	public String getUserId() {
@@ -95,20 +106,20 @@ public class Member {
 		this.address = address;
 	}
 
-	public String getEnrolldate() {
-		return enrolldate;
+	public String getEnrollDate() {
+		return enrollDate;
 	}
 
-	public void setEnrolldate(String enrolldate) {
-		this.enrolldate = enrolldate;
+	public void setEnrollDate(String enrollDate) {
+		this.enrollDate = enrollDate;
 	}
 
-	public String getModifydate() {
-		return modifydate;
+	public String getModifyDate() {
+		return modifyDate;
 	}
 
-	public void setModifydate(String modifydate) {
-		this.modifydate = modifydate;
+	public void setModifyDate(String modifyDate) {
+		this.modifyDate = modifyDate;
 	}
 
 	public String getStatus() {
@@ -123,7 +134,7 @@ public class Member {
 	public String toString() {
 		return "Member [userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName + ", email=" + email
 				+ ", birthday=" + birthday + ", gender=" + gender + ", phone=" + phone + ", address=" + address
-				+ ", enrolldate=" + enrolldate + ", modifydate=" + modifydate + ", status=" + status + "]";
+				+ ", enrollDate=" + enrollDate + ", modifyDate=" + modifyDate + ", status=" + status + "]";
 	}
 	
 }

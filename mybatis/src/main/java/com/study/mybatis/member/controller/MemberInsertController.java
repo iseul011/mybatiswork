@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import com.study.mybatis.member.sevice.MemberServiceImpl;
 import com.study.mybatis.member.vo.Member;
 
 public class MemberInsertController extends HttpServlet {
@@ -29,14 +30,20 @@ public class MemberInsertController extends HttpServlet {
 		// Member클래스에 생성자가 있어야 함
 		Member m = new Member(request.getParameter("userId"),
 							  request.getParameter("userPwd"),
-							  request.getParameter("userPwd"),
 							  request.getParameter("userName"),
 							  request.getParameter("email"),
 							  request.getParameter("birthday"),
 							  request.getParameter("gender"),
 							  request.getParameter("phone"),
 							  request.getParameter("address")
-							);
+							 );
+		int result = new MemberServiceImpl().insertMember(m);
+		
+		if(result > 0) {
+			response.sendRedirect(request.getContextPath());
+		} else {
+			request.getRequestDispatcher("WEB-INF/views/member/memberEnrollForm.jsp").forward(request, response);
+		}
 	}
 
 }

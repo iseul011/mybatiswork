@@ -22,6 +22,7 @@
 	 	where user_id = #{userId}
 	 </select>
 	 
+	 <!-- parameterType은 잘 쓰지 않음. 넣지 않아도 들어가짐 -->
 	 <insert id="insertMember" parameterType="com.study.mybatis.member.vo.Member">
 	 	insert into member(user_id, user_pwd, user_name, email, birthday, gender, phone, address)
 	 				values(#{userId}, #{userPwd}, #{userName}, #{email}, #{birthday}, #{gender}, #{phone}, #{address})

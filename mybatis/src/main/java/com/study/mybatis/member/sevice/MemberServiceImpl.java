@@ -1,9 +1,10 @@
-package com.study.mybatis.member.service;
+package com.study.mybatis.member.sevice;
 
 import org.apache.ibatis.session.SqlSession;
 
 import com.study.mybatis.common.template.Template;
 import com.study.mybatis.member.dao.MemberDao;
+import com.study.mybatis.member.vo.Member;
 
 public class MemberServiceImpl implements MemberService {
 	
@@ -17,6 +18,7 @@ public class MemberServiceImpl implements MemberService {
 		return checkid;
 	}
 	
+	@Override
 	public int insertMember(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = mDao.insertMember(sqlSession, m);

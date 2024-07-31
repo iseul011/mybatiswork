@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import com.study.mybatis.member.service.MemberServiceImpl;
+import com.study.mybatis.member.sevice.MemberServiceImpl;
 
 public class IdCheckController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
