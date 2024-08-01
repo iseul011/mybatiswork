@@ -10,7 +10,10 @@ public class MemberDao {
 	}
 	
 	public int insertMember(SqlSession sqlSession, Member m) {
-		
 		return sqlSession.insert("memberMapper.insertMember", m);  // .insert()로 정해져 있음
+	}
+
+	public Member loginMember(SqlSession sqlSession, Member m) {		
+		return sqlSession.selectOne("memberMapper.loginMember", m);
 	}
 }

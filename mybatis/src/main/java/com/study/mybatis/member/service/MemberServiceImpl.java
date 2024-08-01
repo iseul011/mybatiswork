@@ -1,4 +1,4 @@
-package com.study.mybatis.member.sevice;
+package com.study.mybatis.member.service;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -20,14 +20,24 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public int insertMember(Member m) {
+		
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = mDao.insertMember(sqlSession, m);
 		
 		if(result > 0) {
 			sqlSession.commit();
 		}
+		
 		sqlSession.close();
 		return result;
+	}
+
+	@Override
+	public Member loginMember(Member m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Member loginUser = mDao.loginMember(sqlSession, m);
+		sqlSession.close();
+		return loginUser;
 	}
 
 }
