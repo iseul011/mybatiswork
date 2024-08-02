@@ -28,6 +28,13 @@ public class BoardListController extends HttpServlet {
 		
 		request.getRequestDispatcher("WEB-INF/views/board/boardListView.jsp")
 		       .forward(request, response);
+//		
+//		ArrayList<Board> sList = new BoardserviceImpl.searchList(pi);
+//		request.setAttribute("pi", pi);
+//		request.setAttribute("sList", sList);
+//		
+//		request.getRequestDispatcher("WEB-INF/views/board/boardListView.jsp")
+//	       .forward(request, response);
 	}
 
 }

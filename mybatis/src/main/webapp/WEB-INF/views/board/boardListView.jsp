@@ -6,13 +6,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Board List</title>
+<style>
+	#list-area {
+		border:1px solid ;
+		text-align:center;
+		border-collapse : collapse;
+	}
+	#list-area th, #list-area td {height: 30px;}
+	.outer a {
+		color:black;
+		text-decoration:none;
+	}
+	#paging-area {
+		margin: 10px 0;
+	}
+	#search-area select{
+		font-size:14px;
+		padding: 5px 10px;
+	}
+	#search-area input {
+		padding: 5px 20px;
+	}
+</style>
 </head>
 <body>
 	<jsp:include page="../common/menubar.jsp" />
-	<div class="outer">
+	<div class="outer" align="center">
 		<h1 align="center">게 시 판</h1>
 		
-		<table>
+		<table id="list-area" border="1">
 			<thead>
 				<tr>
 					<th>글번호</th>
@@ -26,7 +48,9 @@
 				<c:forEach var="b" items="${ list }">
 					<tr align="center">
 						<td>${ b.boardNo }</td>
-						<td align="left">${ b.boardTitle }</td>
+						<td style="text-align: left; padding-left: 10px;">
+							<a href="detail.bo?bno=${b.boardNo}">${ b.boardTitle }</a>  <!-- detail.bo? 뒤는 키값 -->
+						</td>
 						<td>${ b.boardWriter }</td>
 						<td>${ b.count }</td>
 						<td>${ b.createDate }</td>
@@ -56,7 +80,7 @@
 					<option value="title">제목</option>
 					<option value="content">내용</option>
 				</select>
-				<input name="keyword">
+				<input name="keyword" value="${ keyword }">
 				<button>검색</button>
 				<input type="hidden" name="nowPage" value="1">
 			</form>
