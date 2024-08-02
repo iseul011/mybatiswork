@@ -21,7 +21,7 @@ public class BoardSearchController extends HttpServlet {
 		
 		String keyField = request.getParameter("keyField");
 		String keyword = request.getParameter("keyword");
-		int nowPage = Integer.parseInt(request.getParameter("nowpage"));
+		int nowPage = Integer.parseInt(request.getParameter("nowPage"));
 		
 		// 1. keyfield와 keyword 2개를 모두 담을 bean객체를 만들어 넘기는 방법
 		// 2. keyfield와 keyword 2개를 HashMap<key,value>에 담아 넘기는 방법

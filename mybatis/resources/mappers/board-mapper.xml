@@ -60,13 +60,13 @@
 		select count(*)
 			from board
 		  where status = 'Y'
-		  <if test="keyField == writer">
+		  <if test="keyField == 'writer'">
 		  	 and board_writer
 		  </if>
-		  <if test="keyField == title">
+		  <if test="keyField == 'title'">
 		  	and board_title
 		  </if>
-		  <if test="keyField == content">
+		  <if test="keyField == 'content'">
 		  	and board_content
 		  </if>
 		   like '%' || #{keyword} || '%'   <!-- ||는 문자열 연결해줌 -->
@@ -77,10 +77,10 @@
 			from board
 		  where status = 'Y'
 		  <choose>
-		  	<when test="keyField == writer">
+		  	<when test="keyField == 'writer'">
 		  		and board_writer
 		  	</when>
-		  	<when test="keyField == title">
+		  	<when test="keyField == 'title'">
 		  		and board_title
 		  	</when>
 		  	<otherwise>
