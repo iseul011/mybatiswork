@@ -7,8 +7,8 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import com.study.mybatis.board.vo.Board;
-import com.study.mybatis.board.vo.PageInfo;
 import com.study.mybatis.board.vo.Reply;
+import com.study.mybatis.common.vo.PageInfo;
 
 public class BoardDao {
 

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.study.mybatis.board.vo.Board;
-import com.study.mybatis.board.vo.PageInfo;
 import com.study.mybatis.board.vo.Reply;
+import com.study.mybatis.common.vo.PageInfo;
 
 public interface BoardService {
 

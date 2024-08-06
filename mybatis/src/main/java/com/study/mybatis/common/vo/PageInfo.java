@@ -1,4 +1,4 @@
-package com.study.mybatis.board.vo;
+package com.study.mybatis.common.vo;
 
 public class PageInfo {
 	

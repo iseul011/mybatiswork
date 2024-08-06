@@ -10,8 +10,9 @@ import java.util.ArrayList;
 
 import com.study.mybatis.board.service.BoardServiceImpl;
 import com.study.mybatis.board.vo.Board;
-import com.study.mybatis.board.vo.PageInfo;
+
 import com.study.mybatis.common.template.Pagination;
+import com.study.mybatis.common.vo.PageInfo;
 
 public class BoardListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -20,7 +21,7 @@ public class BoardListController extends HttpServlet {
 		
 		int totalRecord = new BoardServiceImpl().selectTotalRecord();
 		int nowPage = Integer.parseInt(request.getParameter("nowPage"));
-		PageInfo pi = Pagination.getPageInfo(totalRecord, nowPage, 10, 5);
+		PageInfo pi = Pagination.getPageInfo(totalRecord, nowPage, 5, 3);
 		
 		ArrayList<Board> list = new BoardServiceImpl().selectList(pi);
 		request.setAttribute("pi", pi);
@@ -28,13 +29,6 @@ public class BoardListController extends HttpServlet {
 		
 		request.getRequestDispatcher("WEB-INF/views/board/boardListView.jsp")
 		       .forward(request, response);
-//		
-//		ArrayList<Board> sList = new BoardserviceImpl.searchList(pi);
-//		request.setAttribute("pi", pi);
-//		request.setAttribute("sList", sList);
-//		
-//		request.getRequestDispatcher("WEB-INF/views/board/boardListView.jsp")
-//	       .forward(request, response);
 	}
 
 }

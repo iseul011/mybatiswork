@@ -11,8 +11,8 @@ import java.util.HashMap;
 
 import com.study.mybatis.board.service.*;
 import com.study.mybatis.board.vo.Board;
-import com.study.mybatis.board.vo.PageInfo;
 import com.study.mybatis.common.template.Pagination;
+import com.study.mybatis.common.vo.PageInfo;
 
 public class BoardSearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

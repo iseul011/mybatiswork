@@ -1,6 +1,6 @@
 package com.study.mybatis.common.template;
 
-import com.study.mybatis.board.vo.PageInfo;
+import com.study.mybatis.common.vo.PageInfo;
 
 public class Pagination {
 	public static PageInfo getPageInfo(int totalRecord, int nowPage, int numPerPage, int pagePerBlock) {
